@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="https://com.imcs.customer" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="https://com.imcs.customer">
+
+    <xsd:complexType name="Customer">
+    	<xsd:sequence>
+    		<xsd:element name="customerName">
+    			<xsd:simpleType>
+    				<xsd:restriction base="xsd:string">
+    					<xsd:minLength value="3"></xsd:minLength>
+    					<xsd:maxLength value="50"></xsd:maxLength>
+    				</xsd:restriction>
+    			</xsd:simpleType>
+    		</xsd:element>
+    		<xsd:element name="customerId" type="xsd:int" maxOccurs="1" minOccurs="1"></xsd:element>
+    		<xsd:element name="dateOfBirth" type="xsd:date"></xsd:element>
+    		<xsd:element name="Address" type="tns:Address" maxOccurs="unbounded" minOccurs="1"></xsd:element>
+    		<xsd:element name="annualSalary" type="xsd:string"></xsd:element>
+    		<xsd:element name="PaymentMethod" type="tns:PaymentMethod" maxOccurs="unbounded" minOccurs="1"></xsd:element>
+    	</xsd:sequence>
+    </xsd:complexType>
+
+
+    <xsd:complexType name="Address">
+    	<xsd:sequence>
+    		<xsd:element name="street" type="xsd:string"></xsd:element>
+    		<xsd:element name="city" type="xsd:string"></xsd:element>
+    		<xsd:element name="state" type="xsd:string"></xsd:element>
+    		<xsd:element name="zipCode" type="xsd:string"></xsd:element>
+    	</xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="PaymentMethod">
+    	<xsd:sequence>
+    		<xsd:element name="cardNumber" type="xsd:int"></xsd:element>
+    		<xsd:element name="cardName" type="xsd:string"></xsd:element>
+    		<xsd:element name="dateFrom" type="xsd:date"></xsd:element>
+    		<xsd:element name="dateType" type="xsd:string"></xsd:element>
+    		<xsd:element name="cardType">
+    			<xsd:simpleType>
+    				<xsd:restriction base="xsd:string">
+    					<xsd:enumeration value="DEBITCARD"></xsd:enumeration>
+    					<xsd:enumeration value="CREDITCARD"></xsd:enumeration>
+    				</xsd:restriction>
+    			</xsd:simpleType>
+    		</xsd:element>
+    	</xsd:sequence>
+    </xsd:complexType>
+
+    
+
+    <xsd:element name="Customer" type="tns:Customer"></xsd:element>
+</xsd:schema>

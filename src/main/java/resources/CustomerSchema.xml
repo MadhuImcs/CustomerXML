@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<customer xmlns="https://com.imcs.customer" >
+  <customerName>customerName</customerName>
+  <customerId>0</customerId>
+  <dateOfBirth>2001-01-01</dateOfBirth>
+  <Address>
+    <street>street</street>
+    <city>city</city>
+    <state>state</state>
+    <zipCode>zipCode</zipCode>
+  </Address>
+  <annualSalary>annualSalary</annualSalary>
+  <PaymentMethod>
+    <cardNumber>0</cardNumber>
+    <cardName>cardName</cardName>
+    <dateFrom>2001-01-01</dateFrom>
+    <dateType>dateType</dateType>
+    <cardType>DEBITCARD</cardType>
+  </PaymentMethod>
+</customer>
